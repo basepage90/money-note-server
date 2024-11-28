@@ -24,8 +24,9 @@ Expense Notes Web Server
 
 ## Project Stack
 - Kotlin
-- REST / gRPC
+- REST
 - JPA
+- PostgreSQL
 
 ---
 ## Branch History
