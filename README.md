@@ -27,6 +27,7 @@ Expense Notes Web Server
 - REST
 - JPA
 - PostgreSQL
+- Redis
 
 ---
 ## Branch History
