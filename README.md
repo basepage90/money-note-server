@@ -3,7 +3,7 @@ Expense Notes Web Server
 
 ## CONCEPT
 심플한 지출관리를 위한 웹 앱!
-- 재정타입(FinanceType) enum
+- 기록타입(RecordType) enum
   - 지출(EXPENSE)
   - 수입(INCOME)
   - 고정지출(FIXED_EXPENSE)
@@ -18,8 +18,7 @@ Expense Notes Web Server
   - 기간지정의 목적은 특정 기간 동안의 예산 관리임  
   ex) 후쿠오카 여행기간동안의 실시간 예산 관리  
   여행기간(2월 1일 ~ 2월 10일) 동안의 예산은 80 만원  
-  총 지출은 90 만원 / 총 수입은 5만원 이었으므로 남은 예산은 -5만원 입니다!
-- GPT 를 통한 데이터 분석으로, 지출패턴분석, 지출조언 등을 받을 수 있다.
+  총 지출은 90 만원 / 총 수입은 5만원 이었으므로 남은 예산은 -5만원 입니다!  
 
 ---
 
@@ -29,7 +28,6 @@ Expense Notes Web Server
 - JPA
 - PostgreSQL
 - Redis
-- GPT
 
 ---
 ## Branch History
