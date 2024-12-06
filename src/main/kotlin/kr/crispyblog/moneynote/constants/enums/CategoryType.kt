@@ -1,8 +1,12 @@
 package kr.crispyblog.moneynote.constants.enums
 
-enum class BudgetCategory(val categoryName: String) {
+enum class CategoryType(val categoryName: String) {
     NORMAL("일반"),
-    TRAVEL("야헹");
+    FOOD("음식"),
+    CULTURE("문화"),
+    FASHION("패션"),
+    FITNESS("운동"),
+    FINANCE("금융");
 
     companion object {
         fun findCategoryName(category: String): String {

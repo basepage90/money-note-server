@@ -1,15 +1,12 @@
 package kr.crispyblog.moneynote.domain.money.models;
 
 import jakarta.persistence.*
-import lombok.AllArgsConstructor
-import lombok.NoArgsConstructor
-import org.springframework.core.annotation.AliasFor
 import java.time.LocalDate
 import java.time.LocalDateTime
 
 @Entity
-@Table(name = "budgets")
-class Budget(
+@Table(name = "money_records")
+class MoneyRecord(
     @Column(name = "user_id", nullable = false)
     val userId: Int,
     @Column

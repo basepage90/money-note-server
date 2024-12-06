@@ -4,6 +4,7 @@ plugins {
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
     kotlin("plugin.jpa") version "1.9.25"
+    kotlin("kapt") version "1.9.25"
     id("org.springframework.boot") version "3.4.0"
     id("io.spring.dependency-management") version "1.1.6"
 }
@@ -64,6 +65,13 @@ dependencies {
         exclude(module = "spring-boot-starter-logging")
     }
     // log4j2 설정 - END
+
+    // implementation("com.querydsl:querydsl-jpa")
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+
+    // kapt("com.querydsl:querydsl-apt:5.0.0:jpa")
+    kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
+
 }
 
 kotlin {
