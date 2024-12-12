@@ -16,13 +16,13 @@ class PeriodController(
     private val periodUseCase: PeriodUseCase
 ) {
 
-    @Operation(summary = "기간 정보 조회", description = "특정 기간을 조회한다.")
+    @Operation(summary = "기간 정보 조회", description = "특정 기간 정보를 조회한다.")
     @GetMapping("")
     fun getPeriod(id: Long): PeriodResponse? {
         return periodUseCase.getPeriodResponse(id)
     }
 
-    @Operation(summary = "기간 정보 리스트 조회", description = "특정 일자사이의 기간 리스트를 조회한다.")
+    @Operation(summary = "기간 정보 리스트 조회", description = "특정 일자사이의 기간 정보 리스트를 조회한다.")
     @GetMapping("/list")
     fun searchPeriods(request: PeriodsRequest): List<PeriodResponse> {
         return periodUseCase.searchPeriodResponses(request);

@@ -46,7 +46,7 @@ class PeriodManagementService(
     }
 
     /**
-     * 기간 편집
+     * 기간 정보 편집
      */
     @Transactional
     override fun edit(request: EditPeriodRequest) {
