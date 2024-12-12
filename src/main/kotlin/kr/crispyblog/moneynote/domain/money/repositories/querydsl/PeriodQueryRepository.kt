@@ -13,7 +13,7 @@ class PeriodQueryRepository(private val entityManager: EntityManager) {
 
     private val queryFactory: JPAQueryFactory = JPAQueryFactory(entityManager)
 
-    fun findMyPeriods(userId: Int, startDate: LocalDate?, endDate: LocalDate?): Optional<List<Period>> {
+    fun findMyPeriods(userId: Long, startDate: LocalDate?, endDate: LocalDate?): Optional<List<Period>> {
         val query = queryFactory
             .selectFrom(period)
             .where(period.userId.eq(userId))

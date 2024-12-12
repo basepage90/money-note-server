@@ -1,44 +1,48 @@
 package kr.crispyblog.moneynote.domain.money.models;
 
 import jakarta.persistence.*
+import kr.crispyblog.moneynote.application.money.dto.EditMoneyRecordRequest
 import java.time.LocalDate
 import java.time.LocalDateTime
 
 @Entity
 @Table(name = "money_records")
 class MoneyRecord(
-    @Column(name = "user_id", nullable = false)
-    val userId: Int,
-    @Column
+    val userId: Long,
     var recordType: String,
-    @Column
     var categoryType: String,
-    @Column
     var amount: Long,
-    @Column
-    var memo: String = "",
-    @Column
+    var memo: String?,
     var recordedDate: LocalDate,
-    @Column
-    var periodId: Int
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "periodId", nullable = true)
+    var period: Period? = null
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int = 0
+    val id: Long = 0
 
-    @Column(name = "created_at")
     var createdAt: LocalDateTime? = null
 
-    @Column(name = "updated_at")
-    var updatedAt: LocalDateTime = LocalDateTime.now()
+    var updatedAt: LocalDateTime? = null
 
     @PrePersist
     fun prePersist() {
         createdAt = LocalDateTime.now()
+        updatedAt = LocalDateTime.now()
     }
 
     @PreUpdate
     fun preUpdate() {
         updatedAt = LocalDateTime.now()
+    }
+
+    fun modify(request: EditMoneyRecordRequest, period: Period?) {
+        recordType = request.recordType
+        categoryType = request.categoryType
+        amount = request.amount
+        memo = request.memo
+        recordedDate = request.recordedDate
+        this.period = period
     }
 }

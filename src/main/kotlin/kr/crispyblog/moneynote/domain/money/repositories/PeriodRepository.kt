@@ -8,5 +8,5 @@ import java.util.*
 
 interface PeriodRepository : JpaRepository<Period, Long> {
 
-    fun findByUserIdAndStartDateGreaterThanEqualAndEndDateLessThanEqual(userId: Int, startDate: LocalDate?, endDate: LocalDate?): Optional<List<Period>>
+    fun findByUserIdAndStartDateGreaterThanEqualAndEndDateLessThanEqual(userId: Long, startDate: LocalDate?, endDate: LocalDate?): Optional<List<Period>>
 }

@@ -11,7 +11,7 @@ class SwaggerConfig {
     fun springDocApi(): GroupedOpenApi {
         return GroupedOpenApi.builder()
             .group("1️⃣ v1") // API 그룹 이름
-            .packagesToScan("kr.crispyblog.moneynote.application.controllers.v1") // API 컨트롤러 패키지
+            .packagesToScan("kr.crispyblog.moneynote.application") // API 컨트롤러 패키지
             .pathsToMatch("/v1/**") // 해당 경로에 대한 API만 노출
             .addOpenApiCustomizer { openapi ->
                 openapi.info(
