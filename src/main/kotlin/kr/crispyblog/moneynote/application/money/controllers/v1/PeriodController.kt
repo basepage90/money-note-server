@@ -9,7 +9,7 @@ import kr.crispyblog.moneynote.application.money.dto.PeriodsRequest
 import kr.crispyblog.moneynote.application.money.useCases.PeriodUseCase
 import org.springframework.web.bind.annotation.*
 
-@Tag(name = "Period API", description = " API")
+@Tag(name = "Period API", description = "기간 정보 API")
 @RestController
 @RequestMapping("/v1/period")
 class PeriodController(

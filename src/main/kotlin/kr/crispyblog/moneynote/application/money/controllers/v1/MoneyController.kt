@@ -9,7 +9,7 @@ import kr.crispyblog.moneynote.application.money.useCases.MoneyRecordUseCase
 import org.springframework.web.bind.annotation.*
 import java.time.YearMonth
 
-@Tag(name = "Money API", description = " API")
+@Tag(name = "Money API", description = "수입/지출 기록 API")
 @RestController
 @RequestMapping("/v1/money")
 class MoneyRecordController(
